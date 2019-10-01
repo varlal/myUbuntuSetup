@@ -1,0 +1,2 @@
+# myUbuntuSetup
+VirtualBoxにubuntuをinstallした後に実行するスクリプト
