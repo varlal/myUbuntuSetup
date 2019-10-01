@@ -1,18 +1,20 @@
 #!/bin/sh
 set -e
 
-printf "SUDU password: "
+printf "sudo password: "
 read password
 
-//OS更新
+# OS更新
 echo "$password" | sudo -S apt-get update
 echo "$password" | sudo -S apt-get upgrade
-//ホームの中のディレクトリを英語へ
+
+# ホームの中のディレクトリを英語へ
 LANG=C xdg-user-dirs-gtk-update
-//git導入
+
+# git導入
 echo "$password" | sudo -S apt-get install git
 
-//node導入
+# node導入
 echo "$password" | sudo -S apt-get install -y nodejs npm
 echo "$password" | sudo -S npm cache clean
 echo "$password" | sudo -S npm install n -g
@@ -21,12 +23,15 @@ echo "$password" | sudo -S ln -sf /usr/local/bin/node /usr/bin/node
 node -v
 npm -v
 echo "$password" | sudo -S apt-get purge -y nodejs npm
-//ログインシェルの変更
+
+# ログインシェルの変更
 echo "$password" | sudo -S apt-get install zsh
-chsh
-//vimの導入
+chsh -s /bin/zsh
+
+# vimの導入
 echo "$password" | sudo -S apt-get install vim
-//python導入
+
+# python導入
 echo "$password" | sudo -S apt install -y build-essential
 echo "$password" | sudo -S apt install -y libsm6
 echo "$password" | sudo -S apt install -y libxrender1
