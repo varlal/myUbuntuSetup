@@ -4,5 +4,5 @@
 
 ## 使い方 How To Use
 ```
-$ curl -sf https://raw.githubusercontent.com/varlal/myUbuntuSetup/master/base.sh | sh -s
+$ sh -c "$(curl -sf https://raw.githubusercontent.com/varlal/myUbuntuSetup/master/base.sh)"
 ```
